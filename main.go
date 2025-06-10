@@ -23,6 +23,12 @@ var urlPool = []string{
 	"https://psv4.userapi.com/s/v1/d/PvXfMHhYp2wqPZv_EoX00UAzTXeS__70NaPVcuQlOGGqXuMVGvlCFi4Ba6quaB2v7mGtqD6nJ3gEiJqFIMkjRbv31sQkZVJrirt5sKx5TCB5ve60g4WZvg/Grokaem_algoritmy_2.pdf",
 }
 
+/*
+TODO Добавить сохранение ошибок в бд
+подумать над тем как прикрутить сюда что-то еще вроде grafana prometheus
+или сохранение логов
+или трасировку
+*/
 func main() {
 	results := make(chan workerpool.Result)
 	workerPool := workerpool.New(WORKERS_COUNT, REQ_TIMEOUT, results)
